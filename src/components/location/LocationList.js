@@ -20,13 +20,28 @@ class LocationList extends Component {
             })
     }
 
+    deleteLocation = id => {
+        APIManager.delete("locations", id)
+        .then(() => {
+            APIManager.getAll("locations")
+            .then(updatedLocations => {
+                this.setState({
+                    locations: updatedLocations
+                })
+            })
+        })
+    }
+
     render() {
         console.log("LocationList: Render");
 
         return (
             <div className="container-cards">
                 {this.state.locations.map(location =>
-                    <LocationCard key={location.id} location={location} />
+                    <LocationCard
+                        key={location.id}
+                        location={location}
+                        deleteLocation={this.deleteLocation} />
                 )}
             </div>
         )

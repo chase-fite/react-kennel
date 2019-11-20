@@ -24,9 +24,9 @@ class EmployeeList extends Component {
         APIManager.delete("employees", id)
         .then(() => {
             APIManager.getAll("employees")
-            .then(employeeList => {
+            .then(updatedEmployees => {
                 this.setState({
-                    employees: employeeList
+                    employees: updatedEmployees
                 })
             })
         })
