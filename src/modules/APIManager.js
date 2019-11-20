@@ -16,5 +16,11 @@ export default {
         } else {
         return fetch(`${remoteURL}/${data}`).then(e => e.json())
         }
-    }
+    },
+    delete(data, id) {
+        return fetch(`http://localhost:5002/${data}/${id}`, {
+            method: "DELETE"
+        })
+        .then(result => result.json())
+      }
 }
