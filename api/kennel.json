@@ -1,23 +1,76 @@
 {
     "animals": [
-        { "id": 1, "name": "Doodles", "breed": "Poodle"},
-        { "id": 2, "name": "Decker", "breed": "German Sheperd" },
-        { "id": 3, "name": "Esme", "breed": "Pitbull" }
+        {
+            "id": 1,
+            "name": "Doodles",
+            "breed": "Poodle"
+        },
+        {
+            "id": 2,
+            "name": "Decker",
+            "breed": "Golden Retriever"
+        },
+        {
+            "id": 3,
+            "name": "Esme",
+            "breed": "Pitbull"
+        }
     ],
     "owners": [
-        { "id": 1, "name": "Matt", "phoneNumber": "000-000-0001", "animalId": 1},
-        { "id": 2, "name": "Corri", "phoneNumber": "000-000-0002", "animalId": 3},
-        { "id": 3, "name": "Sophia", "phoneNumber": "000-000-0003", "animalId": 3},
-        { "id": 4, "name": "Chistian", "phoneNumber": "000-000-0004", "animalId": 2}
+        {
+            "id": 1,
+            "name": "Corri",
+            "phoneNumber": "000-000-0001",
+            "animalId": 1
+        },
+        {
+            "id": 2,
+            "name": "Matt",
+            "phoneNumber": "000-000-0002",
+            "animalId": 2
+        },
+        {
+            "id": 3,
+            "name": "Beto",
+            "phoneNumber": "000-000-0003",
+            "animalId": 3
+        },
+        {
+            "id": 4,
+            "name": "James",
+            "phoneNumber": "000-000-0004",
+            "animalId": 2
+        }
     ],
     "employees": [
-        { "id": 1, "name": "Charles", "phoneNumber": "000-000-0010"},
-        { "id": 2, "name": "John", "phoneNumber": "000-000-0020"},
-        { "id": 3, "name": "Sam", "phoneNumber": "000-000-0030"}
+        {
+            "id": 1,
+            "name": "Charles",
+            "phoneNumber": "000-000-0010"
+        },
+        {
+            "id": 2,
+            "name": "John",
+            "phoneNumber": "000-000-0020"
+        },
+        {
+            "id": 3,
+            "name": "Sam",
+            "phoneNumber": "000-000-0030"
+        }
     ],
     "locations": [
-        { "id": 1, "address": "100 Park Plus Blvd, Nashville, TN"},
-        { "id": 2, "address": "200 Willow Drive, Nashville, TN"},
-        { "id": 3, "address": "300 Cobb Pkwy, Kennesaw, GA"}
+        {
+            "id": 1,
+            "address": "100 Park Plus Blvd, Nashville, TN"
+        },
+        {
+            "id": 2,
+            "address": "200 Willow Drive, Nashville, TN"
+        },
+        {
+            "id": 3,
+            "address": "300 Cobb Pkwy, Kennesaw, GA"
+        }
     ]
 }
