@@ -4,7 +4,8 @@ import APIManager from '../../modules/APIManager'
 class LocationDetail extends Component {
 
     state = {
-        address: ""
+        address: "",
+        loadingStatus: true
     }
 
     componentDidMount() {
@@ -14,9 +15,16 @@ class LocationDetail extends Component {
         APIManager.get("locations", this.props.locationId)
         .then(location => {
             this.setState({
-                address: location.address
+                address: location.address,
+                loadingStatus: false
             })
         })
+    }
+
+    handleDelete = () => {
+        this.setState({loadingStatus: true})
+        APIManager.delete("locations", this.props.locationId)
+        .then(() => this.props.history.push("/locations"))
     }
 
     render() {
@@ -25,6 +33,7 @@ class LocationDetail extends Component {
             <div className="card-content">
                 <h3>Address:</h3>
                 <p>{this.state.address}</p>
+                <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Close</button>
             </div>
         </div>
         )
