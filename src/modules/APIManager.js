@@ -13,8 +13,10 @@ export default {
     getAll(data) {
         if (data === "owners") {
             return fetch(`${remoteURL}/${data}?_expand=animal`).then(e => e.json())    
+        } else if (data === "animals") {
+            return fetch(`${remoteURL}/${data}?_embed=owners&_expand=employee`).then(e => e.json())
         } else {
-        return fetch(`${remoteURL}/${data}`).then(e => e.json())
+            return fetch(`${remoteURL}/${data}`).then(e => e.json())
         }
     },
     delete(data, id) {
@@ -22,5 +24,23 @@ export default {
             method: "DELETE"
         })
         .then(result => result.json())
+    },
+    post(data, newObj) {
+        return fetch(`${remoteURL}/${data}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newObj)
+        }).then(data => data.json())
+    },
+    update(data, editedObj) {
+        return fetch(`${remoteURL}/${data}/${editedObj.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(editedObj)
+        }).then(data => data.json());
       }
 }
