@@ -47,17 +47,29 @@ class ApplicationViews extends Component {
           }}
         />
         <Route exact path="/locations" render={(props) => {
-          return <LocationList />
+          if (this.isAuthenticated()) {
+            return <LocationList {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
         <Route path="/locations/:locationId(\d+)" render={(props) => {
           return <LocationDetail locationId={parseInt(props.match.params.locationId)}
             {...props} />
         }} />
         <Route path="/employees" render={(props) => {
-          return <EmployeeList />
+          if (this.isAuthenticated()) {
+            return <EmployeeList {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
         <Route path="/owners" render={(props) => {
-          return <OwnerList />
+          if (this.isAuthenticated()) {
+            return <OwnerList {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
       </React.Fragment>
     )
