@@ -4,18 +4,24 @@
       "id": 1,
       "name": "Doodles",
       "breed": "Poodle",
-      "employeeId": 1
+      "employeeId": 2
     },
     {
       "id": 2,
       "name": "Decker",
-      "breed": "Golden Retriever",
-      "employeeId": 3
+      "breed": "German Shepherd",
+      "employeeId": 1
     },
     {
       "id": 3,
       "name": "Esme",
       "breed": "Pitbull",
+      "employeeId": 3
+    },
+    {
+      "id": 4,
+      "name": "Lacey",
+      "breed": "Golden Retriever",
       "employeeId": 2
     }
   ],
