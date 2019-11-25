@@ -14,9 +14,15 @@ class AnimalList extends Component {
         //getAll from AnimalManager and hang on to that data; put it in state
         APIManager.getAll("animals")
             .then((animalsArray) => {
-                this.setState({
-                    animals: animalsArray
-                })
+                console.log("animalsArray", animalsArray)
+                if (animalsArray.length === 0 || animalsArray === null) {
+                    this.props.history.push("/animals/new")
+                } else {
+                    this.setState({
+                        animals: animalsArray
+                    })
+                }
+
             })
     }
 
