@@ -8,7 +8,7 @@ fieldset {
     background: aliceblue;
 }
 
-fieldset input, fieldset button{
+fieldset input, fieldset button, fieldset select{
     box-sizing: border-box;
     padding: .2em .4em;
     margin: .2em 0;
@@ -55,6 +55,13 @@ fieldset input, fieldset button {
     margin: 0
 }
 
+fieldset select {
+    grid-column: 2/4;
+    width: auto;
+    margin: 0
+}
+
 fieldset .alignRight {
     text-align: right;
+    margin-top: 2px;
 }

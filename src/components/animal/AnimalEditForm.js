@@ -9,6 +9,7 @@ class AnimalEditForm extends Component {
         breed: "",
         employeeId: "",
         loadingStatus: true,
+        employees: []
     };
 
     handleFieldChange = evt => {
@@ -24,7 +25,7 @@ class AnimalEditForm extends Component {
             id: this.props.match.params.animalId,
             name: this.state.animalName,
             breed: this.state.breed,
-            employeeId: this.state.employeeId
+            employeeId: Number(this.state.employeeId)
         };
 
         APIManager.update("animals", editedAnimal)
@@ -34,13 +35,17 @@ class AnimalEditForm extends Component {
     componentDidMount() {
         APIManager.get("animals", this.props.match.params.animalId)
             .then(animal => {
-                this.setState({
-                    animalName: animal.name,
-                    breed: animal.breed,
-                    employeeId: animal.employeeId,
-                    loadingStatus: false,
+                APIManager.getAll("employees")
+                .then(employees => {
+                    this.setState({
+                        animalName: animal.name,
+                        breed: animal.breed,
+                        employeeId: animal.employeeId,
+                        employees: employees,
+                        loadingStatus: false,
+                    });
                 });
-            });
+            })
     }
 
     render() {
@@ -67,8 +72,9 @@ class AnimalEditForm extends Component {
                                 id="breed"
                                 value={this.state.breed}
                             />
+                            <label htmlFor="breed">Breed</label>
 
-                            {/* <select
+                            <select
                                 className="form-control"
                                 id="employeeId"
                                 value={this.state.employeeId}
@@ -79,10 +85,9 @@ class AnimalEditForm extends Component {
                                         {employee.name}
                                     </option>
                                 )}
-                            </select> */}
+                            </select>
+                            <label htmlFor="employeeId">Employee</label>
 
-                            <label htmlFor="animalName">Animal name</label>
-                            <label htmlFor="breed">Breed</label>
                         </div>
                         <div className="alignRight">
                             <button
