@@ -23,7 +23,8 @@ class AnimalEditForm extends Component {
         const editedAnimal = {
             id: this.props.match.params.animalId,
             name: this.state.animalName,
-            breed: this.state.breed
+            breed: this.state.breed,
+            employeeId: this.state.employeeId
         };
 
         APIManager.update("animals", editedAnimal)
@@ -36,6 +37,7 @@ class AnimalEditForm extends Component {
                 this.setState({
                     animalName: animal.name,
                     breed: animal.breed,
+                    employeeId: animal.employeeId,
                     loadingStatus: false,
                 });
             });
@@ -65,6 +67,19 @@ class AnimalEditForm extends Component {
                                 id="breed"
                                 value={this.state.breed}
                             />
+
+                            {/* <select
+                                className="form-control"
+                                id="employeeId"
+                                value={this.state.employeeId}
+                                onChange={this.handleFieldChange}
+                            >
+                                {this.state.employees.map(employee =>
+                                    <option key={employee.id} value={employee.id}>
+                                        {employee.name}
+                                    </option>
+                                )}
+                            </select> */}
 
                             <label htmlFor="animalName">Animal name</label>
                             <label htmlFor="breed">Breed</label>

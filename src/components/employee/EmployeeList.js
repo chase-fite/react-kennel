@@ -41,7 +41,8 @@ class EmployeeList extends Component {
                     <EmployeeCard
                         key={employee.id}
                         employee={employee}
-                        deleteEmployee={this.deleteEmployee} />
+                        deleteEmployee={this.deleteEmployee}
+                        {...this.props} />
                 )}
             </div>
         )
