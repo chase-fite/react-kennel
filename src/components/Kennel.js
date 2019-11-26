@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './Kennel.css'
 import NavBar from './nav/NavBar'
 import ApplicationViews from './ApplicationViews';
-import { is } from '@babel/types';
 
 class Kennel extends Component {
     state = {
