@@ -12,8 +12,7 @@ class AnimalCard extends Component {
           </picture>
           <h2>Name: <span className="card-petname">{this.props.animal.name}</span></h2>
           <p>Breed: {this.props.animal.breed}</p>
-          <p>Employee: {this.props.animal.employee.name}</p>
-          {this.props.animal.owners.map(owner => <p key={owner.id}>Owner: {owner.name}</p>)}
+          {/* {this.props.animal.owners.map(owner => <p key={owner.id}>Owner: {owner.name}</p>)} */}
           <Link to={`/animals/${this.props.animal.id}`}><button>Details</button></Link>
           <button type="button"
             onClick={() => { this.props.history.push(`/animals/${this.props.animal.id}/edit`) }}>Edit</button>
